@@ -3,8 +3,10 @@
 <link rel=stylesheet href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <style>
 div{
-font-size:68px;
 font-face:ariel;
+}
+.First{
+font-size:68px;
 }
 h1{
    font-size:60px;
@@ -17,13 +19,37 @@ h1{
 </style>
 </head>
 <body>
+<script src="../js/changeuserinfo.js">
+</script>
 <div class="row">
-<div class="col-lg-12" style="border-color:black; border:solid; background-color:black;color:white; height:110px">
+<div class="col-lg-12 First" style="border-color:black; border:solid; background-color:black;color:white; height:110px">
 Deloitte Designation
 <img src="../image/del.jpg" height="90px" style="float:right;">
 </div> </div>
 <center><h1>Delete User Details</h1>
 <img src="../image/admin.png" height="200px"></center>
+<div class="row">
+<div class="col-lg-12" style="height:100px;">
+<form onsubmit="return changeUserInfoFunction()">
+<div class="row">
+<div class="col-lg-6" style="padding-left:430px"><center>
+<br>
+  <h4>  User-Id:</h4>
+	<center>
+</div>
+<div class="col-lg-6" >
+<br>
+    <input type="text" id="userId" placeholder="Enter Your User-Id" autofocus />
+ <p id="validUserInfoChange"></p>
+</div>   
+</div>     
+<div class="row">
+<div class="col-lg-12"><center><br>
+    <input type="submit" value="Delete User From DataBase"/>
+
+</div>   
+</div> 
+</form>
 
 </body>
 </html>
