@@ -23,25 +23,25 @@ public class DesignationDAO {
 			return null;
 		}
 	}
-	public LoginInfo validateUser(int userId,String password) {
-          LoginInfo user = new LoginInfo();
+	public LoginInfo validateUser(LoginInfo user1) {
+          
 		try {
 			
 			Connection con = connectToDB();
+			System.out.println("dao");
 			// step 3 create the statement
-			PreparedStatement stmt = con.prepareStatement("select * from loginInfo where userId=? AND password=?");
-			stmt.setInt(1, userId);
-			stmt.setString(2, password);
+			PreparedStatement stmt = con.prepareStatement("select usertype from loginInfo where userId=? AND password=?");
+			stmt.setInt(1, user1.getUserId());
+			stmt.setString(2, user1.getPassword());
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				user.setUserId(rs.getInt(1));
-				user.setPassword(rs.getString(2));
-				user.setUsertype(rs.getString(3));
+				user1.setUsertype(rs.getString(1));
 			}
 			// step 4 execute sql command
 			// step5 close connection
+			System.out.println("user "+user1);
 			con.close();
-			return user;
+			return user1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
