@@ -1,22 +1,33 @@
-package designation.details;
+package com.example.demo.model;
+
+
+
 
 public class UserInfo {
-	private String name;
-	private String eMail;
 	private int userId;
-	private String userType;
+	private String email;
+	private String name;
+	private String fatherName;
+	private String motherName;
+	private String address;
+	private long contactNo;
+	private String gender;
 	private String password;
 
-	public UserInfo() {
-
+	public int getUserId() {
+		return userId;
 	}
 
-	public UserInfo(String name, String eMail, int userId, String userType, String password) {
-		this.name = name;
-		this.eMail = eMail;
+	public void setUserId(int userId) {
 		this.userId = userId;
-		this.userType = userType;
-		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getName() {
@@ -27,28 +38,44 @@ public class UserInfo {
 		this.name = name;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getFatherName() {
+		return fatherName;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setFatherName(String fatherName) {
+		this.fatherName = fatherName;
 	}
 
-	public int getUserId() {
-		return userId;
+	public String getMotherName() {
+		return motherName;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setMotherName(String motherName) {
+		this.motherName = motherName;
 	}
 
-	public String getUserType() {
-		return userType;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setUserType(String userType) {
-		this.userType = userType;
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public long getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(long contactNo) {
+		this.contactNo = contactNo;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getPassword() {
@@ -57,6 +84,13 @@ public class UserInfo {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", email=" + email + ", name=" + name + ", fatherName=" + fatherName
+				+ ", motherName=" + motherName + ", address=" + address + ", contactNo=" + contactNo + ", gender="
+				+ gender + ", password=" + password + "]";
 	}
 
 }
